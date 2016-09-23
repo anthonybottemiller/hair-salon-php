@@ -28,7 +28,12 @@ This page is intended to allow a user add stylists and customers associated with
 
 ##Installation
 
-##Database Scheme
+##Database Setup Commands
+#Database Creation
+* CREATE DATABASE hair_salon;
+* USE hair_salon
+# Stylist table
+* CREATE TABLE stylists (id serial PRIMARY key, name VARCHAR (255));
 
 ##Legal
 Copyright (c) 2016 Anthony J Bottemiller
