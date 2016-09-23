@@ -13,5 +13,11 @@
       {% endfor %}
     </ul>
     {% endif %}
+    <h3>Add a stylist!</h3>
+    <form action="/stylists" method="post">
+    <label for="name"></label>
+    <input type="text" name="name">
+    <button type="submit">Add!</button>
+    </form>
 </body>
 </html>
