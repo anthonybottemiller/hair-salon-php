@@ -29,10 +29,10 @@ This page is intended to allow a user add stylists and customers associated with
 ##Installation
 
 ##Database Setup Commands
-#Database Creation
+#####Database Creation
 * CREATE DATABASE hair_salon;
 * USE hair_salon
-# Stylist table
+#####Stylist Table Creation
 * CREATE TABLE stylists (id serial PRIMARY key, name VARCHAR (255));
 
 ##Legal
