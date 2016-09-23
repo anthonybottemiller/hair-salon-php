@@ -64,7 +64,7 @@
 
           $result = $test_stylist->getId();
 
-          $this->assertEquals(1,$result);
+          $this->assertEquals(true, is_numeric($result));
         }
 
         function testDeleteAll()
