@@ -16,6 +16,11 @@
         return $this->name;
       }
 
+      function setName($new_name)
+      {
+        $this->name = (string) ($new_name);
+      }
+
       function save()
       {
         $GLOBALS["DB"]->exec("INSERT INTO stylists (name) VALUES ('{$this->name}');");
