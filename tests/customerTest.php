@@ -24,7 +24,7 @@
 
         $this->assertEquals($name, $result);
       } 
-      
+
       function testSetName()
       {
         $name = "Taylor Hunting";
@@ -36,4 +36,21 @@
         $this->assertEquals($test_customer->getName(), $new_name);
       }
 
+      function testSave()
+      {
+        $name = "Toby Red";
+        $test_customer = new Customer($name);
+
+        $test_customer->save();
+
+        $result = Customer::getAll();
+        $this->assertEquals($test_customer, $result[0]);
+
+      }
+
+      function testGetAll()
+      {
+
+      }
     }
+?>

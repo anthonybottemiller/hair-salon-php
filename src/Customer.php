@@ -2,10 +2,12 @@
     class Customer
     {
       private $name;
+      private $stylist_id;
 
-      function __construct($name)
+      function __construct($name, $stylist_id = null)
       {
         $this->name = $name;
+        $this->stylist_id = $stylist_id;
       }
 
       function getName()
@@ -17,6 +19,5 @@
       {
         $this->name = (string) ($new_name);
       }
-
     }
 ?>
