@@ -91,7 +91,7 @@
           $name2 = "Findle Medor";
           $test_stylist2 = new Stylist($name2);
 
-          $id = $test_stylist-getId();
+          $id = $test_stylist->getId();
           $result = Stylist::find($id);
 
           $this->assertEquals($test_stylist, $result);
