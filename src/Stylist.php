@@ -60,8 +60,9 @@
         return $stylists;
       }
 
-      static function delete($id)
+      function delete()
       {
+        $id = $this->getId();
         $GLOBALS['DB']->exec("DELETE FROM stylists  WHERE id={$id};");
       }
 

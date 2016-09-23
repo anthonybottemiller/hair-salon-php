@@ -27,6 +27,12 @@
       return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
     });
 
+    $app->delete("/stylists", function () use ($app) {
+      Stylist::deleteAll();
+      return "clicked";
+      // return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
+    });
+
 
     return $app;
 

@@ -117,7 +117,7 @@
           $test_stylist2 = new Stylist($name2);
           $test_stylist2->save();
           $id = $test_stylist->getId();
-          Stylist::delete($id);
+          $test_stylist->delete();
           $result = Stylist::getAll();
           // $result = array_pop($result);
           $this->assertEquals($test_stylist2, $result[0]);
