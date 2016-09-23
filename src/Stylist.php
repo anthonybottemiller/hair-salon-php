@@ -13,7 +13,7 @@
       function save()
 
       {
-        $GLOBALS['DB']->exec("INSERT INTO tasks (name) Values ('{$this->name}';");
+        $GLOBALS['DB']->exec("INSERT INTO stylists (name) VALUES ('{$this->name}');");
       }
 
       static function getAll()
