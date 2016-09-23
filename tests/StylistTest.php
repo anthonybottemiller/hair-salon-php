@@ -30,6 +30,17 @@
           $this->assertEquals($name, $result);
         }
 
+        function testSetName()
+        {
+          $name = "Malco Reynolds";
+          $test_stylist = new Stylist($name);
+          
+          $new_name = "Malcolm Reynolds";
+          $test_stylist->setName($new_name);
+
+          $this->assertEquals($test_stylist->getName(),$new_name);
+        }
+
         function testSave()
         {
           $name = "Trisha Rose";
