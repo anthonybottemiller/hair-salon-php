@@ -10,17 +10,26 @@
 
     class StylistTest extends PHPUnit_Framework_TestCase
     {
+        function testGetName()
+        {
+          $name = "Jacobi Tyler";
+          $test_stylist = new Stylist($name);
 
-        // function testSave()
-        // {
-        //   $name = "Trisha Rose";
-        //   $test_stylist = new Stylist($name);
+          $result = $test_stylist->getName();
 
-        //   $test_stylist->save();
+          $this->assertEquals($name, $result);
+        }
 
-        //   $result = Stylist::getAll();
-        //   $this->assertEquals($test_stylist, $result[0]);
-        // }
+        function testSave()
+        {
+          $name = "Trisha Rose";
+          $test_stylist = new Stylist($name);
+
+          $test_stylist->save();
+
+          $result = Stylist::getAll();
+          $this->assertEquals($test_stylist, $result[0]);
+        }
 
         function testGetAll()
         {
@@ -34,7 +43,7 @@
           $result = Stylist::getAll();
 
           $this->assertEquals([$test_stylist, $test_stylist2], $result);
-          
+
         }
     }
 
