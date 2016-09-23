@@ -24,4 +24,16 @@
 
         $this->assertEquals($name, $result);
       } 
+      
+      function testSetName()
+      {
+        $name = "Taylor Hunting";
+        $test_customer = new Customer($name);
+
+        $new_name = "Taylor Witchard";
+        $test_customer->setName($new_name);
+
+        $this->assertEquals($test_customer->getName(), $new_name);
+      }
+
     }
