@@ -83,6 +83,20 @@
 
         }
 
+        function testFind()
+        {
+          $name = "Regina Spektor";
+          $test_stylist = new Stylist($name);
+          $test_stylist->save();
+          $name2 = "Findle Medor";
+          $test_stylist2 = new Stylist($name2);
+
+          $id = $test_stylist-getId();
+          $result = Stylist::find($id);
+
+          $this->assertEquals($test_stylist, $result);
+        }
+
     }
 
   ?>
