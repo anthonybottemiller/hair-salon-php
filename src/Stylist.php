@@ -5,16 +5,18 @@
       private $name;
 
       function __construct($name)
+
       {
         $this->name = $name;
       }
 
-      function save
+      function save()
+
       {
         $GLOBALS['DB']->exec("INSERT INTO tasks (name) Values ('{$this->name}';");
       }
 
-      static function getAll
+      static function getAll()
 
       {
         $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
@@ -25,7 +27,7 @@
           $new_stylist = new Stylist($name);
           array_push($stylists, $new_stylist);
         }
-        return $tasks;
+        return $stylists;
       }
     }
 ?>
