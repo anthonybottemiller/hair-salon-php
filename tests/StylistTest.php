@@ -56,6 +56,17 @@
 
         }
 
+        function testGetId()
+        {
+          $name = "Robbie Dean";
+          $test_stylist = new Stylist($name);
+          $test_stylist->save();
+
+          $result = $test_stylist->getId();
+
+          $this->assertEquals(1,$result);
+        }
+
         function testDeleteAll()
         {
           $name = "Trisha Rose";
