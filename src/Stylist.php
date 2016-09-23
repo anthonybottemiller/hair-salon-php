@@ -29,7 +29,14 @@
           $new_stylist = new Stylist($name);
           array_push($stylists, $new_stylist);
         }
+
         return $stylists;
       }
+      
+      static function deleteAll()
+      {
+        $GLOBALS["DB"]->exec("DELETE FROM stylists;");
+      }
+
     }
 ?>
