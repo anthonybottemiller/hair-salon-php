@@ -55,6 +55,11 @@
         return $stylists;
       }
 
+      static function delete($id)
+      {
+        $GLOBALS['DB']->exec("DELETE FROM stylists  WHERE id={$id};");
+      }
+
       static function deleteAll()
       {
         $GLOBALS["DB"]->exec("DELETE FROM stylists;");
