@@ -10,6 +10,11 @@
         $this->name = $name;
       }
 
+      function getName()
+      {
+        return $this->name;
+      }
+
       function save()
 
       {
