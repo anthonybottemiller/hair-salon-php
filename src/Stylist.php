@@ -5,7 +5,6 @@
       private $name;
 
       function __construct($name)
-
       {
         $this->name = $name;
       }
@@ -16,15 +15,13 @@
       }
 
       function save()
-
       {
-        $GLOBALS['DB']->exec("INSERT INTO stylists (name) VALUES ('{$this->name}');");
+        $GLOBALS["DB"]->exec("INSERT INTO stylists (name) VALUES ('{$this->name}');");
       }
 
       static function getAll()
-
       {
-        $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
+        $returned_stylists = $GLOBALS["DB"]->query("SELECT * FROM stylists;");
 
         $stylists = array();
         foreach($returned_stylists as $stylist) {
