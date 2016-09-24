@@ -57,11 +57,21 @@
         $name = "Melvin Spinacker";
         $stylist_id = 1;
         $test_customer = new Customer($name, $stylist_id);
-        $test_customer->save();
 
         $result = $test_customer->getStylistId();
 
         $this->assertEquals(true, is_numeric($result));
+      }
+
+      function testSetStylistId()
+      {
+        $name = "Gabriel Gimmel";
+        $stylist_id = 2;
+        $test_customer = new Customer($name, $stylist_id);
+
+        $test_customer->setStylistId(1);
+
+        $this->assertEquals(1, $test_customer->getStylistId());
       }
 
       function testSave()
