@@ -54,6 +54,19 @@
         return $customers;
       }
 
+      static function find($search_id)
+      {
+        $found_customer = null;
+        $customers = Customer::getAll();
+        foreach ($customers as $customer) {
+          $customer_id = $customer->getId();
+          if ($customer_id == $search_id) {
+              $found_customer = $customer;
+          }
+        }
+        return $found_customer;
+      }
+
       function deleteAll()
       {
         $GLOBALS['DB']->exec("DELETE FROM customers;");
