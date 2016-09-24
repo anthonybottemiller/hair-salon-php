@@ -6,6 +6,7 @@
     */
 
     require_once "src/Stylist.php";
+    require_once "src/Customer.php";
 
 
     $server = 'mysql:host=localhost;dbname=hair_salon_test';
@@ -64,6 +65,23 @@
           $this->assertEquals("Al Bundy", $test_stylist->getName());
         }
 
+        function testGetCustomers()
+        {
+          $stylist_name = "Bon Jovi";
+          $test_stylist = new Stylist ($stylist_name);
+
+          $stylist_id = $test_stylist->getId();
+
+          $name_customer = "Jill Johnson";
+          $test_customer = new Customer($name_customer, $stylist_id);
+
+          $name_customer2 = "Jose Ramirez";
+          $test_customer2 = new Customer($name_customer2, $stylist_id);
+
+          $result = $test_stylist->getCustomers();
+
+          $this->assertEquals([$test_customer, $test_customer2], $result);
+        }
 
         function testGetAll()
         {

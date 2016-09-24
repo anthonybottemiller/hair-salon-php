@@ -29,7 +29,7 @@
 
       function update()
       {
-        $GLOBALS['DB']->exec("UPDATE stylists set name='{$this->getName()}' WHERE id='{$this->getId()}';");
+        $GLOBALS['DB']->exec("UPDATE stylists SET name='{$this->getName()}' WHERE id='{$this->getId()}';");
       }
 
 
@@ -37,6 +37,8 @@
       {
         return $this->id;
       }
+
+      
 
       static function find($search_id)
       {
