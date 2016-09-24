@@ -44,13 +44,13 @@
         $test_customer->save();
 
         $result = Customer::getAll();
-        $this->assertEquals($test_customer, $result[0]);
+        $this->assertEquals($test_customer, array_pop($result));
 
       }
 
-      function testGetAll()
-      {
+      // function testGetAll()
+      // {
 
-      }
+      // }
     }
 ?>
