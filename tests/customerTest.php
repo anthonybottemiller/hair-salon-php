@@ -60,7 +60,7 @@
         $test_customer->save();
 
         $result = Customer::getAll();
-        $this->assertEquals($test_customer, array_pop($result));
+        $this->assertEquals($test_customer, $result[0]);
 
       }
 
@@ -92,5 +92,21 @@
         $results = Customer::getAll();
         $this->assertEquals([],$results);
       }
+
+      function testDelete()
+      {
+        $name = "Mole Colley";
+        $test_customer = new Customer($name);
+        $test_customer->save();
+        $name2 = "Blarn Stone";
+        $test_customer2 = new Customer($name2);
+        $test_customer2->save();
+        $id = $test_customer->getId();
+        $test_customer->delete();
+        $result = Customer::getAll();
+        // $result = array_pop($result);
+        $this->assertEquals($test_customer2, $result[0]);
+      }
+
     }
 ?>
