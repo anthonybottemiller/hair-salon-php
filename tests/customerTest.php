@@ -64,6 +64,20 @@
 
       }
 
+      function testFind()
+      {
+        $name = "Miranda Lawson";
+        $test_customer = new Customer($name);
+        $test_customer->save();
+        $name2 = "Keeble Neebler";
+        $test_customer2 = new Customer($name2);
+
+        $id = $test_customer->getId();
+        $result = Customer::find($id);
+
+        $this->assertEquals($test_customer, $result);
+      }
+
       function testGetAll()
       {
         $name = "Fox Roy";
