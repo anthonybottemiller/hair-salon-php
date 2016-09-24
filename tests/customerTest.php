@@ -52,6 +52,18 @@
         $this->assertEquals(true, is_numeric($result));
       }
 
+      function testGetStylistId()
+      {
+        $name = "Melvin Spinacker";
+        $stylist_id = 1;
+        $test_customer = new Customer($name, $stylist_id);
+        $test_customer->save();
+
+        $result = $test_customer->getStylistId();
+
+        $this->assertEquals(true, is_numeric($result));
+      }
+
       function testSave()
       {
         $name = "Toby Red";
@@ -72,7 +84,7 @@
         $name2 = "Keeble Neebler";
         $test_customer2 = new Customer($name2);
         $test_customer2->save();
-        
+
         $id = $test_customer2->getId();
         $result = Customer::find($id);
 
