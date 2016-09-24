@@ -9,7 +9,7 @@
     <p>These are the stylists in the database!</p>
     <ul>
     {% for stylist in stylists %}
-      <li>{{ stylist.getName }}</li>
+      <li>{{ stylist.getName }}</li> <a href="/stylists/{{ stylist.getId }}/customers">Select Stylist</a>
       {% endfor %}
     </ul>
     {% endif %}
