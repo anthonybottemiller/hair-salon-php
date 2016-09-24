@@ -22,6 +22,11 @@
         return $this->id;
       }
 
+      function getStylistId()
+      {
+        return $this->stylist_id;
+      }
+
       function setName($new_name)
       {
         $this->name = (string) ($new_name);
@@ -48,7 +53,7 @@
           $name = $customer['name'];
           $id = $customer['id'];
           $stylist_id = $customer['stylist_id'];
-          $new_customer = new Customer($name, $id, $stylist_id);
+          $new_customer = new Customer($name, $stylist_id, $id);
           array_push($customers, $new_customer);
         }
         return $customers;
