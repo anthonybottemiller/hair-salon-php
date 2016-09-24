@@ -16,7 +16,7 @@
       {
         return $this->name;
       }
-      
+
       function getId()
       {
         return $this->id;
@@ -31,6 +31,12 @@
       {
         $GLOBALS['DB']->exec("INSERT INTO customers (name) VALUES ('{$this->name}');");
         $this->id = $GLOBALS['DB']->lastInsertId();
+      }
+
+      function delete()
+      {
+        $id = $this->getId();
+        $GLOBALS['DB']->exec("DELETE FROM customers  WHERE id={$id};");
       }
 
       function getAll()
