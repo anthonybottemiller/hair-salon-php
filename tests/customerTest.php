@@ -15,6 +15,11 @@
 
     class CustomerTest extends PHPUnit_Framework_TestCase
     {
+      protected function tearDown()
+      {
+        Customer::deleteAll();
+      }
+
       function testGetName()
       {
         $name = "Sherry Wilson";
@@ -74,7 +79,7 @@
         Customer::deleteAll();
 
         $results = Customer::getAll();
-        $this-assertEquals([],$results);
+        $this->assertEquals([],$results);
       }
     }
 ?>

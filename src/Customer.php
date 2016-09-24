@@ -27,6 +27,7 @@
         $GLOBALS['DB']->exec("INSERT INTO customers (name) VALUES ('{$this->name}');");
         $this->id = $GLOBALS['DB']->lastInsertId();
       }
+
       function getAll()
       {
         $returned_customers = $GLOBALS['DB']->query("SELECT * FROM customers;");
@@ -39,8 +40,12 @@
           $new_customer = new Customer($name, $id, $stylist_id);
           array_push($customers, $new_customer);
         }
-
         return $customers;
+      }
+
+      function deleteAll()
+      {
+        $GLOBALS['DB']->exec("DELETE FROM customers;");
       }
     }
 ?>
