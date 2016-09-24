@@ -52,6 +52,19 @@
           $this->assertEquals($test_stylist, $result[0]);
         }
 
+        function testUpdate()
+        {
+          $name = "All Bundy";
+          $test_stylist = new Stylist($name);
+          $test_stylist->save();
+
+          $test_stylist->setName("Al Bundy");
+          $test_stylist->update();
+
+          $this->assertEquals("Al Bundy", $test_stylist->getName());
+        }
+
+
         function testGetAll()
         {
           $name = "Trisha Rose";
