@@ -41,6 +41,17 @@
         $this->assertEquals($test_customer->getName(), $new_name);
       }
 
+      function testGetId()
+      {
+        $name = "Miranda Lawson";
+        $test_customer = new Customer($name);
+        $test_customer->save();
+
+        $result = $test_customer->getId();
+
+        $this->assertEquals(true, is_numeric($result));
+      }
+
       function testSave()
       {
         $name = "Toby Red";
