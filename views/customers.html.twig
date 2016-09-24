@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hair Salon</title>
+</head>
+<body>
+  <h2>Customers</h2>
+  {% if customers is not empty %}
+    <p>These are the Customers that belong to this stylist!</p>
+    <ul>
+    {% for customer in customers %}
+      <li>{{ customer.getName }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <h3>Add a customer!</h3>
+    <form action="/stylists/{{ stylist.getId }}/customers" method="post">
+    <label for="name"></label>
+    <input type="text" name="name">
+    <button type="submit">Add!</button>
+    </form>
+    <form action="/customers" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete All!</button>
+    </form>
+</body>
+</html>
