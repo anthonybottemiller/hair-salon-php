@@ -43,6 +43,10 @@
         $this->id = $GLOBALS['DB']->lastInsertId();
       }
 
+      function update()
+      {
+        $GLOBALS['DB']->exec("UPDATE customers set name='{$this->getName()}' stylist_id='{$this->getStylistId()}' WHERE id='{$this->getId()}';");
+      }
 
       function delete()
       {
