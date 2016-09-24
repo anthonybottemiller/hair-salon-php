@@ -48,9 +48,18 @@
 
       }
 
-      // function testGetAll()
-      // {
+      function testGetAll()
+      {
+        $name = "Fox Roy";
+        $name2 = "Scrappy Flynn";
+        $test_customer = new Customer($name);
+        $test_customer2 = new Customer($name2);
+        $test_customer->save();
+        $test_customer2->save();
 
-      // }
+        $results = Customer::getAll();
+
+        $this->assertEquals([$test_customer, $test_customer2], $results);
+      }
     }
 ?>
