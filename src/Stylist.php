@@ -42,7 +42,7 @@
               $found_stylist = $stylist;
           }
         }
-        return $stylist;
+        return $found_stylist;
       }
 
       static function getAll()

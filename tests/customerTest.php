@@ -71,11 +71,12 @@
         $test_customer->save();
         $name2 = "Keeble Neebler";
         $test_customer2 = new Customer($name2);
-
-        $id = $test_customer->getId();
+        $test_customer2->save();
+        
+        $id = $test_customer2->getId();
         $result = Customer::find($id);
 
-        $this->assertEquals($test_customer, $result);
+        $this->assertEquals($test_customer2, $result);
       }
 
       function testGetAll()

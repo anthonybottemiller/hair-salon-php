@@ -101,11 +101,11 @@
           $test_stylist->save();
           $name2 = "Findle Medor";
           $test_stylist2 = new Stylist($name2);
-
-          $id = $test_stylist->getId();
+          $test_stylist2->save();
+          $id = $test_stylist2->getId();
           $result = Stylist::find($id);
 
-          $this->assertEquals($test_stylist, $result);
+          $this->assertEquals($test_stylist2, $result);
         }
 
         function testDelete()
