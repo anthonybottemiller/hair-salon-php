@@ -43,6 +43,7 @@
         $this->id = $GLOBALS['DB']->lastInsertId();
       }
 
+
       function delete()
       {
         $id = $this->getId();

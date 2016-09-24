@@ -86,6 +86,18 @@
 
       }
 
+      function testUpdate()
+      {
+        $name = "Lazarus Long";
+        $test_customer = new Customer($name);
+        $test_customer->save();
+
+        $test_customer->setStylistId(1);
+        $test_customer->update();
+
+        $this->assertEquals(1, $test_customer->getStylistId());
+      }
+
       function testFind()
       {
         $name = "Miranda Lawson";
