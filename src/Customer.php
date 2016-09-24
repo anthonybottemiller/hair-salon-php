@@ -39,7 +39,7 @@
 
       function save()
       {
-        $GLOBALS['DB']->exec("INSERT INTO customers (name) VALUES ('{$this->name}');");
+        $GLOBALS['DB']->exec("INSERT INTO customers (name, stylist_id) VALUES ('{$this->name}', {$this->getStylistId()});");
         $this->id = $GLOBALS['DB']->lastInsertId();
       }
 

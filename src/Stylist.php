@@ -38,7 +38,7 @@
         return $this->id;
       }
 
-      
+
 
       static function find($search_id)
       {
@@ -51,6 +51,20 @@
           }
         }
         return $found_stylist;
+      }
+
+      function getCustomers()
+      {
+        $customers = Array();
+        $returned_customers = $GLOBALS['DB']->query("SELECT * FROM customers WHERE stylist_id = {$this->getId()};");
+        foreach ($returned_customers as $customer) {
+          $name = $customer['name'];
+          $id = $customer['id'];
+          $stylist_id = $customer['stylist_id'];
+          $new_customer = new Customer($name, $stylist_id, $id);
+          array_push($customers, $new_customer);
+        }
+        return $customers;
       }
 
       static function getAll()
@@ -71,7 +85,7 @@
       function delete()
       {
         $id = $this->getId();
-        $GLOBALS['DB']->exec("DELETE FROM stylists  WHERE id={$id};");
+        $GLOBALS['DB']->exec("DELETE FROM stylists  WHERE id = {$id};");
       }
 
       static function deleteAll()

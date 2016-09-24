@@ -77,7 +77,8 @@
       function testSave()
       {
         $name = "Toby Red";
-        $test_customer = new Customer($name);
+        $stylist_id = 1;
+        $test_customer = new Customer($name, $stylist_id);
 
         $test_customer->save();
 

@@ -19,6 +19,7 @@
         protected function tearDown()
         {
           Stylist::deleteAll();
+          Customer::deleteAll();
         }
 
         function testGetName()
@@ -69,14 +70,17 @@
         {
           $stylist_name = "Bon Jovi";
           $test_stylist = new Stylist ($stylist_name);
+          $test_stylist->save();
 
           $stylist_id = $test_stylist->getId();
 
           $name_customer = "Jill Johnson";
           $test_customer = new Customer($name_customer, $stylist_id);
+          $test_customer->save();
 
           $name_customer2 = "Jose Ramirez";
           $test_customer2 = new Customer($name_customer2, $stylist_id);
+          $test_customer2->save();
 
           $result = $test_stylist->getCustomers();
 
